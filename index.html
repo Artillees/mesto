@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -10,6 +11,7 @@
     <title>Mesto</title>
     <link rel="stylesheet" href="./src/pages/index.css" />
   </head>
+
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
@@ -19,31 +21,49 @@
           class="logo header__logo"
         />
       </header>
+
       <main class="content">
         <section class="profile page__section">
-          <div
-            class="profile__image"
-            style="background-image: url('./src/images/avatar.jpg')"
-          ></div>
+          <div class="profile__image"></div>
+
           <div class="profile__info">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button" type="button"></button>
-            <p class="profile__description">Исследователь океана</p>
+            <h1 class="profile__title"></h1>
+
+            <button
+              class="profile__edit-button"
+              type="button"
+              aria-label="Редактировать профиль"
+            ></button>
+
+            <p class="profile__description"></p>
           </div>
-          <button class="profile__add-button" type="button"></button>
+
+          <button
+            class="profile__add-button"
+            type="button"
+            aria-label="Добавить карточку"
+          ></button>
         </section>
+
         <section class="places page__section">
           <ul class="places__list"></ul>
         </section>
       </main>
+
       <footer class="footer page__section">
         <p class="footer__copyright">© 2025 Mesto Russia</p>
       </footer>
 
       <div class="popup popup_type_edit">
         <div class="popup__content">
-          <button type="button" class="popup__close"></button>
+          <button
+            type="button"
+            class="popup__close"
+            aria-label="Закрыть"
+          ></button>
+
           <h3 class="popup__title">Редактировать профиль</h3>
+
           <form class="popup__form" name="edit-profile" novalidate>
             <label class="popup__label">
               <input
@@ -58,8 +78,12 @@
                 pattern="^[a-zA-Zа-яА-ЯёЁ\s\-]+$"
                 data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
               />
-              <span class="popup__error" id="user-name-error"></span>
+              <span
+                class="popup__error"
+                id="user-name-error"
+              ></span>
             </label>
+
             <label class="popup__label">
               <input
                 type="text"
@@ -71,8 +95,12 @@
                 minlength="2"
                 maxlength="200"
               />
-              <span class="popup__error" id="user-description-error"></span>
+              <span
+                class="popup__error"
+                id="user-description-error"
+              ></span>
             </label>
+
             <button
               type="submit"
               class="button popup__button popup__button_disabled"
@@ -86,8 +114,14 @@
 
       <div class="popup popup_type_new-card">
         <div class="popup__content">
-          <button type="button" class="popup__close"></button>
+          <button
+            type="button"
+            class="popup__close"
+            aria-label="Закрыть"
+          ></button>
+
           <h3 class="popup__title">Новое место</h3>
+
           <form class="popup__form" name="new-place" novalidate>
             <label class="popup__label">
               <input
@@ -102,8 +136,12 @@
                 pattern="^[a-zA-Zа-яА-ЯёЁ\s\-]+$"
                 data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
               />
-              <span class="popup__error" id="place-name-error"></span>
+              <span
+                class="popup__error"
+                id="place-name-error"
+              ></span>
             </label>
+
             <label class="popup__label">
               <input
                 type="url"
@@ -113,8 +151,12 @@
                 placeholder="Ссылка на картинку"
                 required
               />
-              <span class="popup__error" id="place-link-error"></span>
+              <span
+                class="popup__error"
+                id="place-link-error"
+              ></span>
             </label>
+
             <button
               type="submit"
               class="button popup__button popup__button_disabled"
@@ -128,16 +170,32 @@
 
       <div class="popup popup_type_image">
         <div class="popup__content popup__content_content_image">
-          <button type="button" class="popup__close"></button>
-          <img src="" alt="" class="popup__image" />
+          <button
+            type="button"
+            class="popup__close"
+            aria-label="Закрыть"
+          ></button>
+
+          <img
+            src=""
+            alt=""
+            class="popup__image"
+          />
+
           <p class="popup__caption"></p>
         </div>
       </div>
 
       <div class="popup popup_type_edit-avatar">
         <div class="popup__content">
-          <button type="button" class="popup__close"></button>
+          <button
+            type="button"
+            class="popup__close"
+            aria-label="Закрыть"
+          ></button>
+
           <h3 class="popup__title">Обновить аватар</h3>
+
           <form class="popup__form" name="edit-avatar" novalidate>
             <label class="popup__label">
               <input
@@ -148,8 +206,12 @@
                 placeholder="Ссылка на изображение"
                 required
               />
-              <span class="popup__error" id="user-avatar-error"></span>
+              <span
+                class="popup__error"
+                id="user-avatar-error"
+              ></span>
             </label>
+
             <button
               type="submit"
               class="button popup__button popup__button_disabled"
@@ -162,21 +224,41 @@
       </div>
     </div>
 
-    <script src="./src/scripts/index.js" defer type="module"></script>
-
     <template id="card-template">
       <li class="places__item card">
-        <img class="card__image" src="" alt="" />
-        <div class="card__control">
-          <button type="button" class="card__control-button card__control-button_type_delete"></button>
-        </div>
+        <img
+          class="card__image"
+          src=""
+          alt=""
+        />
+
+        <button
+          type="button"
+          class="card__control-button card__control-button_type_delete"
+          aria-label="Удалить карточку"
+        ></button>
+
         <div class="card__description">
           <h2 class="card__title"></h2>
+
           <div class="card__likes">
-            <button type="button" class="card__like-button"></button>
+            <button
+              type="button"
+              class="card__like-button"
+              aria-label="Поставить лайк"
+            ></button>
+
+            <p class="card__like-count">0</p>
           </div>
         </div>
       </li>
     </template>
+
+    <script
+      src="./src/scripts/index.js"
+      defer
+      type="module"
+    ></script>
   </body>
 </html>
+```
